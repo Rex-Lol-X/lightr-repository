@@ -1,5 +1,37 @@
 {
   "name": "Lightr Repository",
-  "version": "1.0.0",
-  "packages": {}
-}
+  "version": "1.1.0",
+  "packages": {
+    "cmatrix": {
+      "source": "https://github.com/abishekvashok/cmatrix/archive/refs/heads/master.tar.gz",
+      "version": "source-master",
+      "type": "source",
+      "build": [
+        "autoreconf -fi && ./configure --prefix=\"$PREFIX\" && make && make install"
+      ]
+    },
+    "htop": {
+      "source": "https://github.com/htop-dev/htop/archive/refs/heads/main.tar.gz",
+      "version": "source-main",
+      "type": "source",
+      "build": [
+        "autoreconf -fi && ./configure --prefix=\"$PREFIX\" && make && make install"
+      ]
+    },
+    "btop": {
+      "source": "https://github.com/aristocratos/btop/archive/refs/heads/main.tar.gz",
+      "version": "source-main",
+      "type": "source",
+      "build": [
+        "make -j2",
+        "make PREFIX=\"$PREFIX\" install"
+      ]
+    },
+    "cava": {
+      "source": "https://github.com/karlstav/cava/archive/refs/heads/master.tar.gz",
+      "version": "source-master",
+      "type": "source",
+      "build": [
+        "./autogen.sh && ./configure --prefix=\"$PREFIX\" && make && make install"
+      ]
+    }
